@@ -2,10 +2,10 @@
 import React from "react";
 import NotLogged from "../Components/Login/NotLogged";
 
-export const Login = () => {
+export const Login = ({ history }) => {
   const onSubmit = (e) => {
     e.preventDefault();
-    window.location.href = "/home";
+    history.push("/home");
   };
 
   return (
