@@ -1,7 +1,6 @@
 import Logged from "../Components/Home/Logged";
 import React, { useState } from "react";
 import { NotLogged } from "../Components/Login/NotLogged";
-import { useSelector } from "react-redux";
 
 export const Login = () => {
   const [change, setChange] = useState(false);
