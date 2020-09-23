@@ -3,12 +3,19 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { BrowserRouter } from "react-router-dom";
+
+import { createStore, applyMiddleware } from "redux";
+import { createLogger } from "redux-logger";
+import { Provider } from "react-redux";
+import { rootReducers } from "./modules";
+
+const logger = createLogger();
+const store = createStore(rootReducers, applyMiddleware(logger));
 
 ReactDOM.render(
-  <BrowserRouter>
+  <Provider store={store}>
     <App />
-  </BrowserRouter>,
+  </Provider>,
   document.getElementById("root")
 );
 

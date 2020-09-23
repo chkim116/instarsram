@@ -89,38 +89,6 @@ export default function Board({ profileImg, boardImg1, boardImg2 }) {
           <img src={profileImg} alt="SliderImg" />
           <small>chkim116</small>
         </div>
-        <div>
-          <img src={profileImg} alt="SliderImg" />
-          <small>chkim116</small>
-        </div>
-        <div>
-          <img src={profileImg} alt="SliderImg" />
-          <small>chkim116</small>
-        </div>
-        <div>
-          <img src={profileImg} alt="SliderImg" />
-          <small>chkim116</small>
-        </div>
-        <div>
-          <img src={profileImg} alt="SliderImg" />
-          <small>chkim116</small>
-        </div>
-        <div>
-          <img src={profileImg} alt="SliderImg" />
-          <small>chkim116</small>
-        </div>
-        <div>
-          <img src={profileImg} alt="SliderImg" />
-          <small>chkim116</small>
-        </div>
-        <div>
-          <img src={profileImg} alt="SliderImg" />
-          <small>chkim116</small>
-        </div>
-        <div>
-          <img src={profileImg} alt="SliderImg" />
-          <small>chkim116</small>
-        </div>
       </SliderIcons>
       {/* 이미지 슬라이더는 다음에 */}
       <BoardContents>

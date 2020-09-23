@@ -72,6 +72,7 @@ const CommentsBoard = styled.form`
 
 export default function Comments() {
   // 좋아요 관리
+
   const [like, setLike] = useState({ fill: "", color: "" });
   const [likeCounter, setLikeCounter] = useState({ counter: 0 });
   const { counter } = likeCounter;

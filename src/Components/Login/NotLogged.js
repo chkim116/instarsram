@@ -5,7 +5,7 @@ import image from "../../images/iphone.png";
 import phoneImg1 from "../../images/instar1.png";
 import phoneImg2 from "../../images/instar2.png";
 import phoneImg3 from "../../images/instar3.png";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 const WrapLogin = styled.div`
   display: flex;
@@ -121,29 +121,30 @@ const WrapInstallBtn = styled.div`
   }
 `;
 
-export default function NotLogged({ onSubmit }) {
-  const [change, setChange] = useState(false);
+const changeImg = () => {
+  const firstImg = document.querySelector(".img:first-child");
+  const currentImg = document.querySelector(".showing");
+  if (!currentImg) return;
+  if (currentImg) {
+    currentImg.classList.remove("showing");
+    const nextImg = currentImg.nextElementSibling;
+    if (nextImg) nextImg.classList.add("showing");
+    else firstImg.classList.add("showing");
+  } else firstImg.classList.add("showing");
+};
 
-  const changeImg = () => {
-    const firstImg = document.querySelector(".img:first-child");
-    const currentImg = document.querySelector(".showing");
-    if (currentImg) {
-      currentImg.classList.remove("showing");
-      const nextImg = currentImg.nextElementSibling;
-      if (nextImg) nextImg.classList.add("showing");
-      else firstImg.classList.add("showing");
-    } else firstImg.classList.add("showing");
+export const NotLogged = ({ onSubmit, change, onChange }) => {
+  const Interval = () => {
+    if (!change) {
+      setInterval(() => {
+        changeImg();
+      }, 3500);
+    }
   };
 
   useEffect(() => {
-    setInterval(() => {
-      setChange(true);
-      changeImg();
-    }, 3500);
-    return () => {
-      clearInterval();
-    };
-  }, [change]);
+    Interval();
+  }, []);
 
   return (
     <>
@@ -156,13 +157,13 @@ export default function NotLogged({ onSubmit }) {
         </ImageSlider>
 
         <WrapInfo>
-          <WrapForm onSubmit={onSubmit}>
+          <WrapForm onSubmit={onSubmit} onChange={onChange}>
             <h2>Instarguram</h2>
             <input
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
             ></input>
-            <input type="text" placeholder="비밀번호"></input>
+            <input type="password" placeholder="비밀번호"></input>
             <button type="submit">로그인</button>
             <span>또는</span>
             <Link to="#">
@@ -186,4 +187,4 @@ export default function NotLogged({ onSubmit }) {
       <Footer />
     </>
   );
-}
+};
