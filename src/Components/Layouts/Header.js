@@ -19,8 +19,9 @@ const Headers = styled.header`
   max-width: 1200px;
 `;
 
-const Logo = styled.div`
+const Logo = styled.h3`
   flex: 1;
+  margin: 0;
 `;
 
 const Nav = styled.nav`
@@ -89,7 +90,7 @@ export default function Header({ profileImg }) {
   return (
     <>
       <Headers>
-        <Logo>Instarguram</Logo>
+        <Logo>Instarsram</Logo>
         <div>
           <SearchInput type="text" placeholder="검색" />
         </div>

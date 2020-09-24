@@ -12,6 +12,21 @@ const CommentsIcons = styled.div`
     cursor: pointer;
     margin-right: 0.3em;
   }
+  .flash__message {
+    position: absolute;
+    animation: flash 2s forwards;
+  }
+  @keyframes flash {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 `;
 
 const BoardLike = styled.div`
@@ -149,7 +164,7 @@ export default function Comments() {
         <div>
           <FiFlag style={save} onClick={onClickSave} size={26} />
           {
-            save.message && <div>저장됨</div>
+            save.message && <div className="flash__message">저장됨</div>
             // 알림 메시지로 바꿀 것
           }
         </div>

@@ -158,7 +158,7 @@ export const NotLogged = ({ onSubmit, change, onChange }) => {
 
         <WrapInfo>
           <WrapForm onSubmit={onSubmit} onChange={onChange}>
-            <h2>Instarguram</h2>
+            <h2>Instarsram</h2>
             <input
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
